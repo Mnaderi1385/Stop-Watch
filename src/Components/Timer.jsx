@@ -77,7 +77,7 @@ class Timer extends React.Component {
         return (
             
             <>
-                <span className={(this.state.isStart) === false ? 'text-red-500 font-bold' : 'text-green-500 font-bold'}>{(this.state.isStart) === false ? 'Stoped' : 'Started'}</span>
+                <span className={`text-center block my-2 ${(this.state.isStart) === false ? 'text-red-500 font-bold' : 'text-green-500 font-bold'}`}>{(this.state.isStart) === false ? 'Stoped' : 'Started'}</span>
                 <p className="bg-slate-800 text-center cursor-pointer text-gray-100 text-2xl mt-1 animate-pulse shadow-md select-none shadow-slate-900 flex justify-center items-center w-48 py-3 px-7 rounded-lg mx-auto hover:shadow-lg" onClick={this.saveTime}>
                     {`${h > 9 ? h : '0' + h} : ${m > 9 ? m : '0' + m} : ${s > 9 ? s : '0' + s}`}
                 </p>
@@ -85,7 +85,7 @@ class Timer extends React.Component {
                 <div className="flex flex-row items-center">
                     <button type="button" className={`bg-green-800 text-white px-4 py-2 select-none text-sm mt-5 ml-3 shadow-sm shadow-green-700 hover:shadow-md focus:ring-4 ring-green-600 rounded-lg flex justify-center items-center ${(this.state.isStart) ? 'pointer-events-none opacity-40 duration-200' : 'pointer-events-auto'}`} title="Start" onClick={this.startTimer}>Start</button>
                     <button type="button" className={`bg-red-800 text-white px-4 py-2 select-none text-sm mt-5 ml-3 shadow-sm shadow-red-700 hover:shadow-md focus:ring-4 ring-red-600 rounded-lg flex justify-center items-center ${(this.state.isStart) === false ? 'pointer-events-none opacity-40 duration-200' : 'pointer-events-auto'}`} title="Stop" onClick={this.stopTimer}>Stop</button>
-                    <button type="button" className={`bg-sky-800 text-white px-4 py-2 select-none text-sm mt-5 ml-3 shadow-sm shadow-sky-700 hover:shadow-md focus:ring-4 ring-sky-600 rounded-lg flex justify-center items-center`} title="Reset" onClick={this.resetTimer}>Reset</button>
+                    <button type="button" className={"bg-sky-800 text-white px-4 py-2 select-none text-sm mt-5 ml-3 shadow-sm shadow-sky-700 hover:shadow-md focus:ring-4 ring-sky-600 rounded-lg flex justify-center items-center"} title="Reset" onClick={this.resetTimer}>Reset</button>
                 </div>
             </>
         )

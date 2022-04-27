@@ -483,9 +483,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-3 {
@@ -493,24 +493,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
 .mt-6 {
   margin-top: 1.5rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -566,40 +566,23 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: show 1.8s ease-in-out;
 }
 
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
+@keyframes show {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+.animate-\[show_\.4s_ease-in-out\] {
+  -webkit-animation: show .4s ease-in-out;
+          animation: show .4s ease-in-out;
 }
 
 @-webkit-keyframes bounce {
@@ -639,93 +622,25 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: bounce 1s infinite;
 }
 
-.animate-\[wiggle_1s_ease-in-out_infinite\] {
-  -webkit-animation: wiggle 1s ease-in-out infinite;
-          animation: wiggle 1s ease-in-out infinite;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
   }
 }
 
-.animate-\[show_1s_ease-in-out_infinite\] {
-  -webkit-animation: show 1s ease-in-out infinite;
-          animation: show 1s ease-in-out infinite;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+@keyframes pulse {
+  50% {
+    opacity: .5;
   }
 }
 
-.animate-\[show_\.7s_ease-in-out_infinite\] {
-  -webkit-animation: show .7s ease-in-out infinite;
-          animation: show .7s ease-in-out infinite;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.animate-\[show_\.7s_ease-in-out\] {
-  -webkit-animation: show .7s ease-in-out;
-          animation: show .7s ease-in-out;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.animate-\[show_\.4s_ease-in-out\] {
-  -webkit-animation: show .4s ease-in-out;
-          animation: show .4s ease-in-out;
+.animate-pulse {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cursor-not-allowed {
-  cursor: not-allowed;
 }
 
 .cursor-no-drop {
@@ -760,6 +675,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-center {
   justify-content: center;
+}
+
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-lg {
@@ -848,6 +769,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+
 .text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
@@ -858,23 +789,49 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
+.text-fuchsia-700 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(162 28 175 / var(--tw-text-opacity));
+}
+
+.text-indigo-700 {
+  --tw-text-opacity: 1;
+  color: rgb(67 56 202 / var(--tw-text-opacity));
+}
+
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity));
+}
+
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
+.text-red-900 {
+  --tw-text-opacity: 1;
+  color: rgb(127 29 29 / var(--tw-text-opacity));
+}
+
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-green-500 {
-  --tw-text-opacity: 1;
-  color: rgb(34 197 94 / var(--tw-text-opacity));
-}
-
-.opacity-80 {
-  opacity: 0.8;
 }
 
 .opacity-40 {
@@ -971,10 +928,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .disabled\:opacity-40:disabled {
   opacity: 0.4;
-}
-
-.disabled\:duration-200:disabled {
-  transition-duration: 200ms;
 }
 
 @media (min-width: 640px) {
