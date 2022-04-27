@@ -77,9 +77,7 @@ class Timer extends React.Component {
         return (
             
             <>
-                <p className="text-center text-gray-100 my-3 animate-bounce">
-                    The Timer Is <span className={(this.state.isStart) === false ? 'text-red-500 font-bold' : 'text-green-500 font-bold'}>{(this.state.isStart) === false ? 'Stoped' : 'Started'}</span>
-                </p>
+                <span className={(this.state.isStart) === false ? 'text-red-500 font-bold' : 'text-green-500 font-bold'}>{(this.state.isStart) === false ? 'Stoped' : 'Started'}</span>
                 <p className="bg-slate-800 text-center cursor-pointer text-gray-100 text-2xl mt-1 animate-pulse shadow-md select-none shadow-slate-900 flex justify-center items-center w-48 py-3 px-7 rounded-lg mx-auto hover:shadow-lg" onClick={this.saveTime}>
                     {`${h > 9 ? h : '0' + h} : ${m > 9 ? m : '0' + m} : ${s > 9 ? s : '0' + s}`}
                 </p>
